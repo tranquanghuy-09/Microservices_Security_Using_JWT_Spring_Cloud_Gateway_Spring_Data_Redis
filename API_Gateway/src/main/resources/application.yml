@@ -1,0 +1,31 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka:
+      value: true
+    fetch-registry:
+      value: true
+    instance:
+      hostname: localhost
+
+spring:
+  application:
+    name: API_GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: SERVICE1
+          uri: lb://SERVICE1
+          predicates:
+            - Path=/api/v1/products/**
+        - id: SERVICE2
+          uri: lb://SERVICE2
+          predicates:
+            - Path=/api/v1/orders/**
+
+
+
+
+#server:
+#  port: 8080
