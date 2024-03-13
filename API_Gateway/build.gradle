@@ -28,7 +28,12 @@ dependencies {
 //    runtimeOnly 'io.netty:netty-resolver-dns-native-macos:4.1.72.Final'
 //    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.72.Final:osx-aarch_64'
     implementation("io.netty:netty-all:4.1.75.Final")
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
+    implementation 'com.nimbusds:nimbus-jose-jwt:8.8'
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }
 

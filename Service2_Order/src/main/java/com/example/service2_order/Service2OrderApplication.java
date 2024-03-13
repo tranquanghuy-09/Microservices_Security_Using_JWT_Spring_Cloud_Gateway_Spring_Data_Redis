@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class Service2OrderApplication {
@@ -37,5 +38,10 @@ public class Service2OrderApplication {
         order.setStatus(faker.lorem().word());
         order.setShippingAddress(faker.address().fullAddress());
         return order;
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

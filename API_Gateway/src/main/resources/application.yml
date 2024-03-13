@@ -18,11 +18,16 @@ spring:
         - id: SERVICE1
           uri: lb://SERVICE1
           predicates:
-            - Path=/api/v1/products/**
+            - Path=/auth/**
+          filters:
+            - AuthenticationFilter
+
         - id: SERVICE2
           uri: lb://SERVICE2
           predicates:
             - Path=/api/v1/orders/**
+          filters:
+            - AuthenticationFilter
 
 
 

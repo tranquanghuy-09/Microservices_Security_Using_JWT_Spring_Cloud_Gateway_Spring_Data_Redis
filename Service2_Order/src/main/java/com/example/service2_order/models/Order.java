@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -24,4 +25,13 @@ public class Order {
     private String status;
     @Column(name = "shipping_address")
     private String shippingAddress;
+    @OneToOne
+    private User user;
+
+    public Order(long id, LocalDateTime orderDate, String status, String shippingAddress) {
+        this.id = id;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.shippingAddress = shippingAddress;
+    }
 }
