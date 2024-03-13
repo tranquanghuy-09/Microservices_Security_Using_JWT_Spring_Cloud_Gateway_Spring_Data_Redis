@@ -6,10 +6,12 @@ import net.datafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@EnableCaching
 public class Service2OrderApplication {
     private final OrderRepository orderRepository;
     private final Faker faker = new Faker();
