@@ -29,7 +29,10 @@ spring:
           filters:
             - AuthenticationFilter
 
-
+        - id: SERVICE4
+          uri: lb://SERVICE4
+          predicates:
+            - Path=/api/v1/products/**
 
 
 #server:
